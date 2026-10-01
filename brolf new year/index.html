@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brolf Tech New Year</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #071d52;
+      color: #14264d;
+    }
+
+    .poster {
+      width: 850px;
+      max-width: 100%;
+      margin: 20px auto;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.94), rgba(238,246,255,.96)),
+        #fff;
+      box-shadow: 0 10px 35px rgba(0,0,0,.35);
+    }
+
+    .hero {
+      min-height: 410px;
+      padding: 20px 45px 10px;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(circle at 8% 18%, #fff 0 2px, transparent 3px),
+        radial-gradient(circle at 92% 28%, #fff 0 2px, transparent 3px),
+        linear-gradient(135deg, #eaf4ff, #fff 48%, #dcecff);
+    }
+
+    .badge {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 165px;
+      padding: 27px 15px 32px;
+      background: #06285f;
+      color: white;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 1.15;
+      clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+    }
+
+    .wolf {
+      width: 85px;
+      height: 85px;
+      margin: 0 auto 5px;
+      color: #1683d2;
+      font-size: 68px;
+      line-height: 85px;
+    }
+
+    .year {
+      display: inline-block;
+      padding: 7px 55px;
+      margin-top: 5px;
+      background: #0755aa;
+      color: white;
+      font-size: 35px;
+      font-weight: 900;
+      transform: skew(-12deg);
+      letter-spacing: 1px;
+    }
+
+    .title {
+      margin-top: 5px;
+      color: #09265e;
+      font-size: 72px;
+      line-height: .95;
+      font-weight: 1000;
+      letter-spacing: -3px;
+      text-shadow:
+        3px 3px 0 white,
+        6px 6px 0 #7f8ca3;
+    }
+
+    .open {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 9px 24px;
+      background: linear-gradient(#ff5d00, #d93600);
+      color: white;
+      font-size: 43px;
+      font-weight: 1000;
+      border: 5px solid white;
+      border-radius: 7px;
+      box-shadow: 0 6px 0 #913000;
+      transform: rotate(-1deg);
+    }
+
+    .subtitle {
+      margin-top: 25px;
+      font-size: 23px;
+      font-weight: 700;
+      color: #252b35;
+    }
+
+    .subtitle span {
+      color: #1665bd;
+      font-style: italic;
+    }
+
+    .section {
+      margin: 0 35px 18px;
+      background: white;
+      border-radius: 28px;
+      padding: 30px 20px 20px;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    }
+
+    .section-title {
+      position: absolute;
+      top: -17px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #063f8e;
+      color: white;
+      border-radius: 18px;
+      padding: 6px 32px;
+      font-size: 19px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .course {
+      min-height: 140px;
+      padding: 12px 8px;
+      text-align: center;
+      border-right: 1px solid #cbd4df;
+      border-bottom: 1px solid #cbd4df;
+    }
+
+    .course:nth-child(4n) {
+      border-right: none;
+    }
+
+    .course:nth-child(n+5) {
+      border-bottom: none;
+    }
+
+    .icon {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 8px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 40px;
+      font-weight: 900;
+      box-shadow: inset 0 -5px 10px rgba(0,0,0,.2);
+    }
+
+    .blue { background: #0789d7; }
+    .green { background: #0bb58c; }
+    .black { background: #222; }
+    .orange { background: #ffad00; }
+    .purple { background: #5d20b7; }
+    .darkblue { background: #1268c4; }
+    .lime { background: #65b32e; }
+
+    .course h3 {
+      font-size: 15px;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .learning {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+    }
+
+    .learning-item {
+      padding: 8px 15px;
+      border-right: 1px solid #ccd4de;
+    }
+
+    .learning-item:last-child {
+      border-right: none;
+    }
+
+    .learning-icon {
+      height: 70px;
+      font-size: 55px;
+      color: #0956a5;
+      margin-bottom: 5px;
+    }
+
+    .learning h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .learning p {
+      font-size: 13px;
+      line-height: 1.3;
+      color: #333;
+    }
+
+    .registration {
+      background: #06377d;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 55px;
+      gap: 20px;
+    }
+
+    .registration-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .calendar {
+      font-size: 48px;
+    }
+
+    .registration small {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .registration strong {
+      display: block;
+      font-size: 23px;
+    }
+
+    .cta {
+      background: #ff9500;
+      padding: 12px 25px;
+      color: white;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 900;
+      transform: rotate(-2deg);
+      border-radius: 5px;
+    }
+
+    .contact {
+      padding: 20px 45px 0;
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 35px;
+    }
+
+    .contact h2 {
+      color: #082e68;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .location {
+      display: grid;
+      grid-template-columns: 80px 1fr 80px 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .building {
+      width: 75px;
+      height: 60px;
+      border-radius: 50%;
+      background: #e7f0fa;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+    }
+
+    .location h3 {
+      font-size: 14px;
+      color: #174b86;
+      margin-bottom: 4px;
+    }
+
+    .location p {
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .phone {
+      font-size: 22px;
+      color: #092c68;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .social {
+      margin-top: 20px;
+      background: #0752a0;
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 10px 15px;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .social div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social span {
+      font-size: 23px;
+    }
+
+    .hashtags {
+      background: #06306c;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 700px) {
+      .poster {
+        margin: 0;
+      }
+
+      .hero {
+        padding: 15px 15px 25px;
+      }
+
+      .badge {
+        width: 120px;
+        font-size: 13px;
+        padding: 18px 8px 28px;
+      }
+
+      .year {
+        font-size: 25px;
+        padding: 5px 30px;
+      }
+
+      .title {
+        font-size: 47px;
+      }
+
+      .open {
+        font-size: 28px;
+        padding: 8px 12px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .section {
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+
+      .courses {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .course:nth-child(4n) {
+        border-right: 1px solid #cbd4df;
+      }
+
+      .course:nth-child(2n) {
+        border-right: none;
+      }
+
+      .course:nth-child(n+5) {
+        border-bottom: 1px solid #cbd4df;
+      }
+
+      .course:nth-child(n+7) {
+        border-bottom: none;
+      }
+
+      .learning {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .learning-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .learning-item {
+        margin-bottom: 15px;
+      }
+
+      .registration {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact {
+        padding: 20px 15px 0;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .location {
+        grid-template-columns: 70px 1fr;
+      }
+
+      .social {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="poster">
+
+    <header class="hero">
+      <div class="badge">
+        EMPOWER<br>
+        YOUR FUTURE<br>
+        WITH TECH
+      </div>
+
+      <div class="wolf">🐺</div>
+
+      <div class="year">NEW YEAR</div>
+
+      <h1 class="title">BROLF TECH</h1>
+
+      <div class="open">REGISTRATION IS OPEN!</div>
+
+      <p class="subtitle">
+        Start the New Year <span>with new skills</span>
+      </p>
+    </header>
+
+    <section class="section">
+      <div class="section-title">CHOOSE YOUR PATH</div>
+
+      <div class="courses">
+
+        <div class="course">
+          <div class="icon blue">&lt;/&gt;</div>
+          <h3>WEB<br>DEVELOPMENT</h3>
+        </div>
+
+        <div class="course">
+          <div class="icon green">▣</div>
+          <h3>APP<br>DEVELOPMENT</h3>
+        </div>
+
+        <div class="course">
+          <div class="icon black">🐧</div>
+          <h3>LINUX</h3>
+        </div>
+
+        <div class="course">
+          <div class="icon orange">📣</div>
+          <h3>DIGITAL<br>MARKETING</h3>
+        </div>
+
+        <div class="course">
+          <div class="icon purple">▶</div>
+          <h3>VIDEO<br>EDITING</h3>
+        </div>
+
+        <div class="course">
+          <div class="icon darkblue">C++</div>
+          <h3>C++ &amp; JAVA</h3>
+        </div>
+
+        <div class="course">
+          <div class="icon lime">🤖</div>
+          <h3>ROBOTICS</h3>
+        </div>
+
+        <div class="course">
+          <div class="icon purple">🧠</div>
+          <h3>ARTIFICIAL<br>INTELLIGENCE (AI)</h3>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">LEARN YOUR WAY</div>
+
+      <div class="learning">
+
+        <div class="learning-item">
+          <div class="learning-icon">🏫</div>
+          <h3>ON-CAMPUS<br>(OFFLINE)</h3>
+          <p>
+            Face-to-face learning at our Bethel campus or our branch
+            Awoliya College around Wingate.
+          </p>
+        </div>
+
+        <div class="learning-item">
+          <div class="learning-icon">💻</div>
+          <h3>ONLINE</h3>
+          <p>
+            Learn from anywhere in the world.
+          </p>
+        </div>
+
+        <div class="learning-item">
+          <div class="learning-icon">👥</div>
+          <h3>PRIVATE CLASS</h3>
+          <p>
+            One-on-one personalized learning.
+          </p>
+        </div>
+
+        <div class="learning-item">
+          <div class="learning-icon">⌂</div>
+          <h3>HOME TUTORING</h3>
+          <p>
+            We come to your home.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="registration">
+      <div class="registration-left">
+        <div class="calendar">📅</div>
+        <div>
+          <small>REGISTRATION OPENS:</small>
+          <strong>TUESDAY, SEPTEMBER 2, 2026</strong>
+        </div>
+      </div>
+
+      <div class="cta">
+        DON'T WAIT!<br>
+        START YOUR TECH<br>
+        JOURNEY TODAY!
+      </div>
+    </div>
+
+    <section class="contact">
+
+      <div class="contact-grid">
+
+        <div>
+          <h2>📍 OUR LOCATIONS</h2>
+
+          <div class="location">
+
+            <div class="building">🏢</div>
+
+            <div>
+              <h3>BETHEL CAMPUS</h3>
+              <p>
+                In front of Anfia,<br>
+                around Bicha Building
+              </p>
+            </div>
+
+            <div class="building">🏢</div>
+
+            <div>
+              <h3>AWOLIYA COLLEGE CAMPUS</h3>
+              <p>Around Wingate</p>
+            </div>
+
+          </div>
+
+          <h2 style="margin-top:15px;">📍 ADDIS ABABA, ETHIOPIA</h2>
+        </div>
+
+        <div>
+          <h2>📞 CALL US</h2>
+
+          <div class="phone">
+            09 74 50 58 77<br>
+            07 03 80 11 37
+          </div>
+
+          <p style="margin-top:10px;font-size:13px;font-weight:700;">
+            FOR MORE INFORMATION<br>
+            VISIT OUR SOCIAL MEDIA PAGES:
+          </p>
+        </div>
+
+      </div>
+
+      <div class="social">
+        <div>
+          <span>➤</span>
+          TELEGRAM<br>
+          @InfoBrolfTech
+        </div>
+
+        <div>
+          <span>🌐</span>
+          WEBSITE<br>
+          brolftech.cloud
+        </div>
+
+        <div>
+          <span>♪</span>
+          TIKTOK<br>
+          @brolftechtrainingcenter
+        </div>
+
+        <div>
+          <span>◎</span>
+          INSTAGRAM<br>
+          @brolftech
+        </div>
+      </div>
+
+    </section>
+
+    <div class="hashtags">
+      #BrolfTech &nbsp; #NewYear2026 &nbsp; #EthiopianNewYear
+      &nbsp; #TechEducation &nbsp; #LearnAndEarn &nbsp; #FutureReady
+    </div>
+
+  </div>
+
+</body>
+</html>
